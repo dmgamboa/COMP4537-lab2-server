@@ -1,13 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const fetch = require('node-fetch');
-
 const PORT = 3000 || process.env.PORT;
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({ origin: '*' }));
+app.use(cors());
 
 app.post('/chatbot', (req, res) => {
     const message = req.body.message;
